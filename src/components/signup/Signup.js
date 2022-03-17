@@ -51,7 +51,7 @@ function Signup() {
       Device: "WEB",
     };
     if (response.name) {
-      axios.post("/register", stateFb).then((response) => {
+      axios.post("/api/register", stateFb).then((response) => {
         console.log("ss0", response);
         if (response.data.StatusCode === 201) {
           setUserResp(response.data);
@@ -87,7 +87,7 @@ function Signup() {
       Device: "WEB",
     };
     if (response.profileObj.name) {
-      axios.post("/register", stateGo).then((response) => {
+      axios.post("/api/register", stateGo).then((response) => {
         console.log("ss0", response);
         if (response.data.StatusCode === 201) {
           setUserResp(response.data);
@@ -195,7 +195,7 @@ function Signup() {
     }
     if (fname && lname && email && pass && checkBoxs.checked === true) {
       setLoad(true);
-      axios.post("/register", state).then((response) => {
+      axios.post("/api/register", state).then((response) => {
         console.log("ss0", response);
         if (response.data.StatusCode === 201) {
           setUserResp(response.data);

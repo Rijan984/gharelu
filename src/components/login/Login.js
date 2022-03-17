@@ -53,7 +53,7 @@ function Login() {
 
     // console.log(response.name);
     // setUser(response);
-    axios.post("/login", stateFb).then((response) => {
+    axios.post("/api/login", stateFb).then((response) => {
       console.log(response.data);
       if (response.data.LoginOutputs) {
         setInvalid(false);
@@ -87,7 +87,7 @@ function Login() {
       Source: "GOOGLE",
       Device: "WEB",
     };
-    axios.post("/login", stateGo).then((response) => {
+    axios.post("/api/login", stateGo).then((response) => {
       console.log(response.data);
       if (response.data.StatusCode === 200) {
         setInvalid(false);
@@ -143,7 +143,7 @@ function Login() {
       setInvalid(false);
     } else if (email !== "" && pass !== "" && checkBoxs.checked !== false) {
       setLoad(true);
-      axios.post("/login", state).then((response) => {
+      axios.post("/api/login", state).then((response) => {
         console.log(response.data);
         console.log(checkBoxs.checked);
 
@@ -213,7 +213,7 @@ function Login() {
       // });
     } else {
       setLoad(true);
-      axios.post("/login", state).then((response) => {
+      axios.post("/api/login", state).then((response) => {
         console.log(response.data);
         console.log(checkBoxs.checked);
         if (response.data.LoginOutputs && checkBoxs.checked === false) {
@@ -231,7 +231,7 @@ function Login() {
           );
           setLoad(false);
 
-          navigate("/profile");
+          navigate("/api/profile");
           NotificationManager.success("Success message", "Title here");
         } else if (response.data.StatusCode === 201) {
           setUserResp(response.data.Message);
