@@ -1,0 +1,9 @@
+.logo {
+  width: 100%;
+  float: left;
+  height: 100vh;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,104 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+/* .main {
+  width: 100%;
+  float: left;
+  margin-top: 40px;
+} */
+.header {
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  /* background-color: aliceblue; */
+}
+.drop {
+  float: right;
+  width: 60%;
+}
+.drop .select {
+  background-color: rgb(228, 234, 240);
+  float: right;
+  width: 20%;
+  padding: 2%;
+  margin-left: 5px;
+}
+.drop select {
+  background-color: rgb(228, 234, 240);
+  float: left;
+  width: 100%;
+}
+
+.data {
+  width: 65%;
+  height: 100%;
+  float: left;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* overflow-x: scroll; */
+}
+.jobContent {
+  width: 100%;
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.jobs {
+  width: 95%;
+  padding: 2%;
+  border-radius: 10px;
+  /* height: 200px; */
+
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellow; */
+  margin-top: 40px;
+}
+.profilePic {
+  width: 15%;
+  float: left;
+  /* height: 120px; */
+  /* background-color: red; */
+}
+.profilePic img {
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 50%;
+}
+.content {
+  width: 70%;
+  /* background-color: white; */
+  float: left;
+  margin-left: 5px;
+}
+.content .info {
+  /* width: 100%; */
+  float: left;
+}
+.content .info span {
+  margin-right: 10px;
+  float: left;
+}
+.btns {
+  /* height: 100%; */
+  float: right;
+  /* padding: 0 10%; */
+  width: 20%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btns button {
+  width: 100%;
+  background-color: rgb(228, 234, 240);
+  border-color: rgb(228, 234, 240);
+  color: #044aad;
+  border-radius: 10px;
+  padding: 7% 0;
+}

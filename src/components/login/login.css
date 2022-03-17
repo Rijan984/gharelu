@@ -1,0 +1,218 @@
+.modal-dialog.modal-fullscreen.dialouge {
+  height: 80vh;
+  margin: 10vh 15%;
+  width: 70%;
+}
+#exampleModalToggle {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#exampleModalToggle2 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-dialog.modal-fullscreen.dialouge2 {
+  height: 80vh;
+  margin: 10vh 15%;
+  width: 70%;
+  /* background-color: red; */
+}
+.modal-fullscreen .modal-content {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  padding: 10px;
+}
+/* .modal-fullscreen .modal-body::-webkit-scrollbar {
+  display: none;
+} */
+/* .modal-fullscreen .modal-body {
+  overflow-y: auto;
+} */
+.close {
+  float: left;
+  width: 100%;
+  /* background: red; */
+}
+
+.close button {
+  float: right;
+  padding: 10px;
+  margin-right: 15px;
+}
+.log-pop {
+  width: 100%;
+  height: 100%;
+  float: left;
+  /* background-color: blue; */
+}
+.left {
+  width: 50%;
+  height: 100%;
+  float: left;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal .logo {
+  width: 100%;
+  height: 20%;
+  /* margin-top: 5px; */
+}
+.logo img {
+  width: 50%;
+}
+.socialMedia {
+  width: 100%;
+  /* margin-top: 5px; */
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+.socialMedia button {
+  background-color: none;
+  border: none;
+  height: 40px;
+  width: 20%;
+  margin: 10px;
+  color: white;
+}
+.fb {
+  background-color: #28589c;
+}
+.twit {
+  background-color: #00acee;
+}
+.goog {
+  background-color: #bb001b;
+}
+.login {
+  width: 70%;
+}
+.login p {
+  text-align: center;
+  /* margin-top: 5px; */
+  color: rgb(126, 119, 119);
+}
+.log .input input {
+  margin-top: 10px;
+}
+/* input[type="text"]:focus {
+  border: 2px solid #555;
+}
+
+input[type="password"]:focus {
+  border: 3px solid #555;
+} */
+
+.login button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #004aad;
+  color: white;
+}
+.login button:hover {
+  color: white;
+}
+.check {
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+  color: rgb(126, 119, 119);
+  /* background-color: red; */
+}
+.check .forgetPass {
+  float: right;
+}
+.register {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+.slider {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: rgb(109, 109, 190);
+}
+.sliderImg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* background-color: red; */
+  /* object-fit: cover; */
+}
+.carousel {
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  /* background-color: red; */
+}
+
+.carousel-inner img {
+  width: 80% !important;
+  margin: 0 10% 0 10%;
+  /* background-color: blue; */
+}
+@media screen and (max-width: 1000px) {
+  .left {
+    width: 100%;
+    /* height: auto; */
+    float: left;
+    /* background-color: red; */
+  }
+  .logo img {
+    width: 40%;
+  }
+  .slider {
+    display: none;
+    /* margin-top: px; */
+    width: 100%;
+    float: left;
+  }
+  .socialMedia {
+    font-size: 10px;
+  }
+  .socialMedia button {
+    background-color: none;
+    border: none;
+    height: 35px;
+    width: 30%;
+    margin: 10px;
+    color: white;
+  }
+  .fb {
+    background-color: #28589c;
+  }
+  .twit {
+    background-color: #00acee;
+  }
+  .goog {
+    background-color: #bb001b;
+  }
+  .login {
+    width: 90%;
+  }
+  .check {
+    text-align: center;
+  }
+  .check span {
+    width: 100%;
+    text-align: center;
+  }
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+.uneditable-input:focus {
+  /* border-color: rgba(126, 239, 104, 0.8); */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}

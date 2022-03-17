@@ -1,0 +1,39 @@
+.slideImg {
+  width: 100%;
+  height: 100%;
+  float: left;
+  background-color: black;
+}
+.slideImg img {
+  width: 50%;
+}
+.carousel {
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  /* background-color: red; */
+}
+
+.carousel-inner img {
+  width: 80% !important;
+  margin: 0 10% 0 10%;
+  /* background-color: blue; */
+}
+/* .each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+} */

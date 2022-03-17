@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+body {
+  width: 100%;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  /* overflow-y: scroll; */
+}
