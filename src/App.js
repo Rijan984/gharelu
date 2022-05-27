@@ -1,26 +1,27 @@
 // import logo from './logo.svg';
-import { useEffect, useState } from "react";
+import React from 'react';
+import { useEffect, useState } from 'react';
 // import { useNavigate } from "react-router-dom";
-import "./App.css";
+import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
-} from "react-router-dom";
-import Loading from "./components/loading/Loading";
-import Login from "./components/login/Login";
-import Profile from "./components/profile/Profile";
-import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
-import Error from "./components/404Error/Error";
-import "react-notifications/lib/notifications.css";
-import { NotificationContainer } from "react-notifications";
-import Dashboard from "./components/dashboard/Dashboard";
-import Filter from "./components/filter/Filter";
-import Nav from "./components/nav/Nav";
-import Home from "./components/home/Home";
-import Search from "./components/property/searchProperty/Search";
+} from 'react-router-dom';
+import Loading from './components/loading/Loading';
+import Login from './components/login/Login';
+import Profile from './components/profile/Profile';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+import Error from './components/404Error/Error';
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+import Dashboard from './components/dashboard/Dashboard';
+import Filter from './components/filter/Filter';
+import Nav from './components/nav/Nav';
+import Home from './components/home/Home';
+import Search from './components/property/searchProperty/Search';
 function App() {
   // const navigate = useNavigate();
   const redux = useSelector(selectUser);
@@ -30,7 +31,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
-    console.log("hey");
+    console.log('hey');
   }, 3000);
   if (loading) {
     return <Loading />;

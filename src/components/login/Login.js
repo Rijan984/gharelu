@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import "./login.css";
-import { useNavigate } from "react-router-dom";
-import logo from ".././images/text.png";
-import Slider from "../slider/Slider";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import GoogleLogin from "react-google-login";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Signup from "../signup/Signup";
-import $ from "jquery";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { login, selectUser } from "../../features/userSlice";
-import axios from "axios";
-import { NotificationManager } from "react-notifications";
+import React, { useState } from 'react';
+import './login.css';
+import { useNavigate } from 'react-router-dom';
+import logo from '.././images/text.png';
+import Slider from '../slider/Slider';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import GoogleLogin from 'react-google-login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Signup from '../signup/Signup';
+import $ from 'jquery';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { login, selectUser } from '../../features/userSlice';
+import axios from 'axios';
+import { NotificationManager } from 'react-notifications';
 
-const checkBox = document.getElementById("checkBox");
+const checkBox = document.getElementById('checkBox');
 function Login() {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
   const [emailErr, setEmailErr] = useState(false);
   const [passErr, setPassErr] = useState(false);
   const [invalid, setInvalid] = useState(false);
@@ -35,32 +35,33 @@ function Login() {
   const state = {
     UserName: email,
     Password: pass,
-    NotificationToken: "string",
-    Source: "DEVICE",
+    NotificationToken: 'string',
+    Source: 'DEVICE',
   };
 
   const responseFacebook = (response) => {
     // e.preventDefault();
     console.log(response);
-    const [first, last] = response.name.split(" ");
+    const [first, last] = response.name.split(' ');
     console.log(first);
     const stateFb = {
       UserName: first,
       Password: first,
-      Source: "FACEBOOK",
-      Device: "WEB",
+      NotificationToken: 'string',
+      Source: 'FACEBOOK',
+      Device: 'WEB',
     };
 
     // console.log(response.name);
     // setUser(response);
-    axios.post("/api/login", stateFb).then((response) => {
+    axios.post('/login', stateFb).then((response) => {
       console.log(response.data);
       if (response.data.LoginOutputs) {
         setInvalid(false);
         setEmailErr(false);
         setPassErr(false);
-        setEmail("");
-        setPass("");
+        setEmail('');
+        setPass('');
         dispatch(
           login({
             username: response.name,
@@ -69,32 +70,33 @@ function Login() {
           })
         );
         setTimeout(() => {
-          navigate("/profile");
+          navigate('/profile');
         }, 1);
-        NotificationManager.success("Successfully Logged in", "Info!", 2000);
+        NotificationManager.success('Successfully Logged in', 'Info!', 2000);
       } else {
-        console.log("userNotFound");
+        console.log('userNotFound');
       }
     });
   };
   const responseGoogle = (response) => {
     // console.log(response.profileObj.name);
-    const [first, last] = response.profileObj.name.split(" ");
+    const [first, last] = response.profileObj.name.split(' ');
     console.log(first);
     const stateGo = {
       UserName: first,
       Password: first,
-      Source: "GOOGLE",
-      Device: "WEB",
+      NotificationToken: 'string',
+      Source: 'GOOGLE',
+      Device: 'WEB',
     };
-    axios.post("/api/login", stateGo).then((response) => {
+    axios.post('/login', stateGo).then((response) => {
       console.log(response.data);
       if (response.data.StatusCode === 200) {
         setInvalid(false);
         setEmailErr(false);
         setPassErr(false);
-        setEmail("");
-        setPass("");
+        setEmail('');
+        setPass('');
         dispatch(
           login({
             username: first,
@@ -103,11 +105,11 @@ function Login() {
           })
         );
         setTimeout(() => {
-          navigate("/profile");
+          navigate('/profile');
         }, 1);
-        NotificationManager.success("Successfully Logged in", "Info!", 3000);
+        NotificationManager.success('Successfully Logged in', 'Info!', 3000);
       } else {
-        console.log("userNotFound");
+        console.log('userNotFound');
       }
     });
     // console.log(response.profileObj);
@@ -128,22 +130,22 @@ function Login() {
 
   const validation = (e) => {
     e.preventDefault();
-    const checkBoxs = document.getElementById("checkBox");
-    if (email === "" && pass === "") {
+    const checkBoxs = document.getElementById('checkBox');
+    if (email === '' && pass === '') {
       setEmailErr(true);
       setPassErr(true);
       setInvalid(false);
-    } else if (email === "") {
+    } else if (email === '') {
       setEmailErr(true);
       setPassErr(false);
       setInvalid(false);
-    } else if (pass === "") {
+    } else if (pass === '') {
       setEmailErr(false);
       setPassErr(true);
       setInvalid(false);
-    } else if (email !== "" && pass !== "" && checkBoxs.checked !== false) {
+    } else if (email !== '' && pass !== '' && checkBoxs.checked !== false) {
       setLoad(true);
-      axios.post("/api/login", state).then((response) => {
+      axios.post('/login', state).then((response) => {
         console.log(response.data);
         console.log(checkBoxs.checked);
 
@@ -151,8 +153,8 @@ function Login() {
           setInvalid(false);
           setEmailErr(false);
           setPassErr(false);
-          setEmail("");
-          setPass("");
+          setEmail('');
+          setPass('');
           dispatch(
             login({
               username: email,
@@ -161,8 +163,8 @@ function Login() {
             })
           );
           setLoad(false);
-          navigate("/profile");
-          NotificationManager.success("Successfully Logged in", "Info!", 3000);
+          navigate('/profile');
+          NotificationManager.success('Successfully Logged in', 'Info!', 3000);
         } else if (
           response.data.StatusCode === 201 ||
           response.data.StatusCode === 203
@@ -213,15 +215,15 @@ function Login() {
       // });
     } else {
       setLoad(true);
-      axios.post("/api/login", state).then((response) => {
+      axios.post('/login', state).then((response) => {
         console.log(response.data);
         console.log(checkBoxs.checked);
         if (response.data.LoginOutputs && checkBoxs.checked === false) {
           setInvalid(false);
           setEmailErr(false);
           setPassErr(false);
-          setEmail("");
-          setPass("");
+          setEmail('');
+          setPass('');
           dispatch(
             login({
               username: email,
@@ -231,8 +233,8 @@ function Login() {
           );
           setLoad(false);
 
-          navigate("/api/profile");
-          NotificationManager.success("Success message", "Title here");
+          navigate('/profile');
+          NotificationManager.success('Success message', 'Title here');
         } else if (response.data.StatusCode === 201) {
           setUserResp(response.data.Message);
           setLoad(false);
@@ -307,9 +309,9 @@ function Login() {
                     {emailErr && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         Please Enter Your Email
@@ -331,9 +333,9 @@ function Login() {
                     {passErr && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         Please Enter Your Password
@@ -343,9 +345,9 @@ function Login() {
                   {invalid && (
                     <span
                       style={{
-                        color: "red",
-                        float: "left",
-                        marginBottom: "5px",
+                        color: 'red',
+                        float: 'left',
+                        marginBottom: '5px',
                       }}
                     >
                       {userResp}
@@ -362,9 +364,9 @@ function Login() {
                         className="spinner-border"
                         role="status"
                         style={{
-                          width: "20px",
-                          height: "20px",
-                          marginRight: "10px",
+                          width: '20px',
+                          height: '20px',
+                          marginRight: '10px',
                         }}
                       >
                         {/* <span class="sr-only">Loading...</span> */}
@@ -377,7 +379,7 @@ function Login() {
               <div className="register">
                 Don't have an account?
                 <span
-                  style={{ color: "blue", cursor: "pointer" }}
+                  style={{ color: 'blue', cursor: 'pointer' }}
                   data-bs-target="#exampleModalToggle2"
                   data-bs-toggle="modal"
                   onClick={() => {

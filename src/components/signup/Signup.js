@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import Slider from "../slider/Slider";
-import logo from ".././images/text.png";
-import "./signup.css";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import GoogleLogin from "react-google-login";
-import axios from "axios";
-import { login } from "../../features/userSlice";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { NotificationManager } from "react-notifications";
+import React, { useRef, useState } from 'react';
+import Slider from '../slider/Slider';
+import logo from '.././images/text.png';
+import './signup.css';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import GoogleLogin from 'react-google-login';
+import axios from 'axios';
+import { login } from '../../features/userSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { NotificationManager } from 'react-notifications';
 function Signup() {
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
   const [emailErr, setEmailErr] = useState(false);
   const [passErr, setPassErr] = useState(false);
   const [invalid, setInvalid] = useState(false);
@@ -22,6 +22,7 @@ function Signup() {
   const [fnameErr, setFnameErr] = useState(false);
   const [userResp, setUserResp] = useState();
   const [load, setLoad] = useState(false);
+  const ref = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // const redux = useSelector(selectUser);
@@ -32,14 +33,14 @@ function Signup() {
     LastName: lname,
     UserName: email,
     Password: pass,
-    Source: "DEVICE",
-    Device: "WEB",
+    Source: 'DEVICE',
+    Device: 'WEB',
   };
   const responseFacebook = (response) => {
     // e.preventDefault();
     console.log(response);
     // setUser(response);
-    const [first, last] = response.name.split(" ");
+    const [first, last] = response.name.split(' ');
     console.log(first);
 
     const stateFb = {
@@ -47,16 +48,16 @@ function Signup() {
       LastName: last,
       UserName: first,
       Password: first,
-      Source: "FACEBOOK",
-      Device: "WEB",
+      Source: 'FACEBOOK',
+      Device: 'WEB',
     };
     if (response.name) {
-      axios.post("/api/register", stateFb).then((response) => {
-        console.log("ss0", response);
+      axios.post('/register', stateFb).then((response) => {
+        console.log('ss0', response);
         if (response.data.StatusCode === 201) {
           setUserResp(response.data);
           setInvalid(true);
-          NotificationManager.error(response.data.Message, "Info!", 4000);
+          NotificationManager.error(response.data.Message, 'Info!', 4000);
         } else if (response.data.StatusCode === 200) {
           // dispatch(
           //   login({
@@ -66,16 +67,16 @@ function Signup() {
           //   })
           // );
           setTimeout(() => {
-            navigate("/profile");
+            navigate('/profile');
           }, 1);
-          NotificationManager.success("Account Created", "Info!", 3000);
+          NotificationManager.success('Account Created', 'Info!', 3000);
         }
       });
     }
   };
   const responseGoogle = (response) => {
     console.log(response.profileObj);
-    const [first, last] = response.profileObj.name.split(" ");
+    const [first, last] = response.profileObj.name.split(' ');
     console.log(first);
 
     const stateGo = {
@@ -83,16 +84,16 @@ function Signup() {
       LastName: last,
       UserName: first,
       Password: first,
-      Source: "GOOGLE",
-      Device: "WEB",
+      Source: 'GOOGLE',
+      Device: 'WEB',
     };
     if (response.profileObj.name) {
-      axios.post("/api/register", stateGo).then((response) => {
-        console.log("ss0", response);
+      axios.post('/register', stateGo).then((response) => {
+        console.log('ss0', response);
         if (response.data.StatusCode === 201) {
           setUserResp(response.data);
           setInvalid(true);
-          NotificationManager.error(response.data.Message, "Info!", 4000);
+          NotificationManager.error(response.data.Message, 'Info!', 4000);
         } else if (response.data.StatusCode === 200) {
           // dispatch(
           //   login({
@@ -102,9 +103,9 @@ function Signup() {
           //   })
           // );
           setTimeout(() => {
-            navigate("/profile");
+            navigate('/profile');
           }, 1);
-          NotificationManager.success("Account Created", "Info!", 3000);
+          NotificationManager.success('Account Created', 'Info!', 3000);
         }
       });
     }
@@ -116,14 +117,14 @@ function Signup() {
     //   })
     // );
     setTimeout(() => {
-      navigate("/profile");
+      navigate('/profile');
     }, 1);
   };
   // var checkBox = document.getElementById("checkBox");
   const validation = (e) => {
     e.preventDefault();
-    const checkBoxs = document.getElementById("checkBoxss");
-    console.log("i am used");
+    const checkBoxs = document.getElementById('checkBoxss');
+    console.log('i am used');
     // if (email === "") {
     //   setEmailErr(true);
     //   setPassErr(false);
@@ -153,26 +154,26 @@ function Signup() {
     //   setLnameErr(false);
     // }
 
-    if (fname === "") {
+    if (fname === '') {
       setEmailErr(false);
       setPassErr(false);
       setInvalid(false);
       setFnameErr(true);
       setLnameErr(false);
-    } else if (lname === "") {
+    } else if (lname === '') {
       setLnameErr(true);
       setEmailErr(false);
       setPassErr(false);
       setInvalid(false);
       setFnameErr(false);
       setLnameErr(true);
-    } else if (email === "") {
+    } else if (email === '') {
       setEmailErr(true);
       setPassErr(false);
       setInvalid(false);
       setFnameErr(false);
       setLnameErr(false);
-    } else if (pass === "") {
+    } else if (pass === '') {
       setEmailErr(false);
       setPassErr(true);
       setInvalid(false);
@@ -195,8 +196,8 @@ function Signup() {
     }
     if (fname && lname && email && pass && checkBoxs.checked === true) {
       setLoad(true);
-      axios.post("/api/register", state).then((response) => {
-        console.log("ss0", response);
+      axios.post('/register', state).then((response) => {
+        console.log('ss0', response);
         if (response.data.StatusCode === 201) {
           setUserResp(response.data);
           setLoad(false);
@@ -210,10 +211,14 @@ function Signup() {
           //     loggedIn: true,
           //   })
           // );
-
-          navigate("/profile");
+          navigate('/');
+          setFname('');
+          setLname('');
+          setEmail('');
+          setPass('');
+          ref.current.click();
           setLoad(false);
-          NotificationManager.success("Account Created", "Info!", 3000);
+          NotificationManager.success('Account Created', 'Info!', 3000);
         }
       });
     }
@@ -266,7 +271,7 @@ function Signup() {
             </div>
             <div className="login" id="signup ">
               <p>Or</p>
-              <div className="log" style={{ fontSize: "14px" }}>
+              <div className="log" style={{ fontSize: '14px' }}>
                 <form onSubmit={validation}>
                   <div className="input form-group">
                     <input
@@ -282,9 +287,9 @@ function Signup() {
                     {fnameErr && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         Please Enter Last name
@@ -305,9 +310,9 @@ function Signup() {
                     {lnameErr && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         Please Enter Last name
@@ -329,9 +334,9 @@ function Signup() {
                     {emailErr && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         Please Enter Last name
@@ -352,9 +357,9 @@ function Signup() {
                     {passErr && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         Please Enter Last name
@@ -363,9 +368,9 @@ function Signup() {
                     {invalid && (
                       <span
                         style={{
-                          color: "red",
-                          float: "left",
-                          marginBottom: "5px",
+                          color: 'red',
+                          float: 'left',
+                          marginBottom: '5px',
                         }}
                       >
                         {userResp.Message}
@@ -385,8 +390,8 @@ function Signup() {
                     />
                     <span
                       style={{
-                        color: "rgb(126, 119, 119)",
-                        marginLeft: "10px",
+                        color: 'rgb(126, 119, 119)',
+                        marginLeft: '10px',
                       }}
                     >
                       I agree all the terms and condition
@@ -395,23 +400,23 @@ function Signup() {
                   {check && (
                     <span
                       style={{
-                        color: "red",
-                        float: "left",
-                        marginBottom: "5px",
+                        color: 'red',
+                        float: 'left',
+                        marginBottom: '5px',
                       }}
                     >
                       Please agree the terms and conditions.
                     </span>
-                  )}{" "}
+                  )}{' '}
                   <button type="submit" className="btn">
                     {load && (
                       <div
                         className="spinner-border"
                         role="status"
                         style={{
-                          width: "20px",
-                          height: "20px",
-                          marginRight: "10px",
+                          width: '20px',
+                          height: '20px',
+                          marginRight: '10px',
                         }}
                       >
                         {/* <span class="sr-only">Loading...</span> */}
@@ -424,9 +429,10 @@ function Signup() {
               <div className="register">
                 Have an account?
                 <span
-                  style={{ color: "blue", cursor: "pointer" }}
+                  style={{ color: 'blue', cursor: 'pointer' }}
                   data-bs-target="#exampleModalToggle"
                   data-bs-toggle="modal"
+                  ref={ref}
                 >
                   Login
                 </span>
