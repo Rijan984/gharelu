@@ -66,3 +66,17 @@
   height: 1px;
   background-color: rgb(205, 205, 205);
 }
+
+@media screen and (max-width: 1000px) {
+  .blog {
+    width: 60%;
+  }
+  .blog .blog-list {
+    width: 80%;
+    margin: 20px 10%;
+  }
+  .popular {
+    width: 35%;
+    /* background-color: red; */
+  }
+}
