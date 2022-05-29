@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './blog.css';
 import { data } from './property';
+import Popup from './Popup';
 function Blog() {
+  const [show, setShow] = useState();
+  const [info, setInfo] = useState();
+  const showPop = (
+    e,
+    id,
+    image,
+    title,
+    address,
+    description,
+    price,
+    area,
+    room
+  ) => {
+    setShow(true);
+    setInfo({
+      ...info,
+      id,
+      image,
+      title,
+      address,
+      description,
+      price,
+      area,
+      room,
+    });
+  };
+  console.log(info);
   return (
     <>
+      {show && <Popup info={info} setShow={setShow} />}
       <div className="blog">
         {data.map((newData) => {
           const {
@@ -17,8 +46,23 @@ function Blog() {
             room,
           } = newData;
           return (
-            <>
-              <div className="blog-list">
+            <React.Fragment key={id}>
+              <div
+                className="blog-list"
+                onClick={(e) => {
+                  showPop(
+                    e,
+                    id,
+                    image,
+                    title,
+                    address,
+                    description,
+                    price,
+                    area,
+                    room
+                  );
+                }}
+              >
                 <div className="blog-img">
                   <img src={image} alt="property image" />
                 </div>
@@ -34,7 +78,7 @@ function Blog() {
                   </div>
                 </div>
               </div>
-            </>
+            </React.Fragment>
           );
         })}
       </div>

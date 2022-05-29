@@ -3,6 +3,9 @@
   height: 60px;
   float: left;
   background-color: #f4f6fc;
+  position: sticky;
+  top: 0;
+  bottom: 0;
 }
 
 #navlogo {
