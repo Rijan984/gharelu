@@ -8,3 +8,4 @@
 -- blog page url: /blog
 -- responsive design of blog page
 -- property info popup
+-- popup design
