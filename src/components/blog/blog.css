@@ -1,0 +1,55 @@
+.blog {
+  width: 70%;
+  float: left;
+  /* height: calc(100vh - 60px); */
+  /* background-color: red; */
+}
+.blog .blog-list {
+  float: left;
+  width: 30%;
+  /* height: 400px; */
+  margin: 20px 1.66%;
+  border: 1px solid black;
+}
+.blog .blog-list .blog-img {
+  width: 100%;
+  /* margin: 1% 5% 0 5%; */
+  float: left;
+  /* border: 1px solid black; */
+  height: 150px;
+}
+.blog .blog-list .blog-img img {
+  width: 100%;
+  height: 150px;
+  float: left;
+  object-fit: cover;
+}
+.blog .blog-detail {
+  width: 90%;
+  margin: 1% 5% 0 5%;
+}
+.blog .user-detail {
+  width: 100%;
+  float: left;
+}
+.blog .user-detail img {
+  width: 50%;
+  float: left;
+}
+
+.popular {
+  width: 30%;
+  float: left;
+}
+.popular .popular-post {
+  width: 100%;
+  float: left;
+}
+.popular .popular-post .info {
+  width: 90%;
+  float: left;
+  margin: 0 5%;
+}
+.popular .popular-post .info img {
+  width: 100%;
+}
