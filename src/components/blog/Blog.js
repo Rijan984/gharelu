@@ -30,7 +30,7 @@ function Blog() {
                   </div>
                   <div className="user-detail">
                     <img src="" alt="property image" />
-                    <h3>User Name</h3>
+                    <p>User Name</p>
                   </div>
                 </div>
               </div>
@@ -39,30 +39,34 @@ function Blog() {
         })}
       </div>
       <div className="popular">
-        <div className="popular-post">
-          <p>Popular Post</p>
-          <div className="info">
-            <img src="" alt="popular blog image" />
-            <p>Category</p>
-            <p>Title</p>
+        <div className="inner-popular">
+          <div className="popular-post">
+            <p>Popular Post</p>
+            <div className="underline"></div>
+            <div className="info">
+              <img src="" alt="popular blog image" />
+              <p>Category</p>
+              <p>Title</p>
+            </div>
+            <div className="info">
+              <img src="" alt="popular blog image" />
+              <p>Category</p>
+              <p>Title</p>
+            </div>
+            <div className="info">
+              <img src="" alt="popular blog image" />
+              <p>Category</p>
+              <p>Title</p>
+            </div>
           </div>
-          <div className="info">
-            <img src="" alt="popular blog image" />
-            <p>Category</p>
-            <p>Title</p>
-          </div>
-          <div className="info">
-            <img src="" alt="popular blog image" />
-            <p>Category</p>
-            <p>Title</p>
-          </div>
-        </div>
-        <div className="popular-post">
-          <p>Popular Post</p>
-          <div className="info">
-            {/* <img src="" alt="popular blog image" /> */}
-            <p>Category</p>
-            <p>Title</p>
+          <div className="popular-post">
+            <p>Popular Post</p>
+            <div className="underline"></div>
+            <div className="info">
+              {/* <img src="" alt="popular blog image" /> */}
+              <p>Category</p>
+              <p>Title</p>
+            </div>
           </div>
         </div>
       </div>

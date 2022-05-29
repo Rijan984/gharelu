@@ -10,7 +10,7 @@
   width: 30%;
   /* height: 400px; */
   margin: 20px 1.66%;
-  border: 1px solid black;
+  border: 1px solid rgb(205, 205, 205);
 }
 .blog .blog-list .blog-img {
   width: 100%;
@@ -41,16 +41,28 @@
 .popular {
   width: 25%;
   float: left;
+  margin-top: 20px;
+}
+.popular .inner-popular {
+  width: 90%;
+  /* margin: 0 2.5%; */
 }
 .popular .popular-post {
   width: 100%;
   float: left;
 }
 .popular .popular-post .info {
-  width: 90%;
+  width: 100%;
   float: left;
-  margin: 0 5%;
+  /* margin: 0 5%; */
 }
 .popular .popular-post .info img {
   width: 100%;
+}
+
+.popular .underline {
+  width: 100%;
+  margin-bottom: 8px;
+  height: 1px;
+  background-color: rgb(205, 205, 205);
 }
