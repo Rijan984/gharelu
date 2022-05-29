@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import "./nav.css";
-import logo from ".././images/logo.png";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { login, selectUser } from "../../features/userSlice";
-import Login from "../login/Login";
-import Signup from "../signup/Signup";
+import React, { useState } from 'react';
+import './nav.css';
+import logo from '.././images/logo.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, selectUser } from '../../features/userSlice';
+import Login from '../login/Login';
+import Signup from '../signup/Signup';
+
 function Nav() {
   const [show, setShow] = useState(false);
+  const [toogle, setToogle] = useState(1);
   const redux = useSelector(selectUser);
   const dispatch = useDispatch();
   const reduxLogin = redux.loggedIn;
@@ -21,9 +23,9 @@ function Nav() {
         loggedIn: null,
       })
     );
-    navigate("/");
+    navigate('/');
   };
-  const menu = document.getElementsByClassName("navlinks");
+  const menu = document.getElementsByClassName('navlinks');
 
   const drop = () => {
     setShow(!show);
@@ -34,24 +36,71 @@ function Nav() {
         <img src={logo} alt="" srcSet="" />
       </div>
       <div className="navlinks">
-        <Link to="/" className="link">
+        <Link
+          to="/"
+          className={toogle === 1 ? 'link active' : 'link'}
+          onClick={() => setToogle(1)}
+        >
           Home
         </Link>
-        <Link to="/pr" className="link">
+
+        <Link
+          to="/pr"
+          className={toogle === 2 ? 'link active' : 'link'}
+          onClick={() => setToogle(2)}
+        >
           Pages
         </Link>
-        <Link to="*" className="link">
-          Candidates
+
+        <Link
+          to="*"
+          className={toogle === 3 ? 'link active' : 'link'}
+          onClick={() => setToogle(3)}
+        >
+          Blank
         </Link>
-        <Link to="*" className="link">
-          Employers
+
+        <Link
+          to="*"
+          className={toogle === 4 ? 'link active' : 'link'}
+          onClick={() => setToogle(4)}
+        >
+          Blank
         </Link>
-        <Link to="*" className="link">
+
+        <Link
+          to="*"
+          className={toogle === 4 ? 'link active' : 'link'}
+          onClick={() => setToogle(4)}
+        >
+          Blank
+        </Link>
+
+        <Link
+          to="/blog"
+          className={toogle === 5 ? 'link active' : 'link'}
+          onClick={() => setToogle(5)}
+        >
           Blog
         </Link>
-        <Link to="*" className="link">
+
+        <Link
+          to="*"
+          className={toogle === 6 ? 'link active' : 'link'}
+          onClick={() => setToogle(6)}
+        >
           Contact
         </Link>
+
+        {reduxLogin && (
+          <Link
+            to="/jobs"
+            className={toogle === 7 ? 'link active' : 'link'}
+            onClick={() => setToogle(7)}
+          >
+            Jobs
+          </Link>
+        )}
 
         {!redux.username && (
           <>
@@ -77,14 +126,16 @@ function Nav() {
           </div>
         )}
 
-        <a
-          className="btn btn-primary"
-          //   style={{ color: "blue", cursor: "pointer" }}
-          href="#exampleModalToggle2"
-          data-bs-toggle="modal"
-        >
-          Signup
-        </a>
+        {!redux.username && (
+          <a
+            className="btn btn-primary"
+            //   style={{ color: "blue", cursor: "pointer" }}
+            href="#exampleModalToggle2"
+            data-bs-toggle="modal"
+          >
+            Signup
+          </a>
+        )}
       </div>
 
       {!reduxLogin && (

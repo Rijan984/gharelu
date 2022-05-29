@@ -22,6 +22,7 @@ import Filter from './components/filter/Filter';
 import Nav from './components/nav/Nav';
 import Home from './components/home/Home';
 import Search from './components/property/searchProperty/Search';
+import Blog from './components/blog/Blog';
 function App() {
   // const navigate = useNavigate();
   const redux = useSelector(selectUser);
@@ -71,6 +72,7 @@ function App() {
                   element={<Navigate replace to="/profile" />}
                 />
                 <Route exact path="/jobs" element={<Filter />} />
+                <Route exact path="/blog" element={<Blog />} />
                 <Route exact path="/property" element={<Search />} />
               </>
             )}
