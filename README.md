@@ -6,3 +6,4 @@
 5/29/2022
 
 -- blog page url:/blog
+-- responsive design
