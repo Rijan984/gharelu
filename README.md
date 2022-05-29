@@ -7,3 +7,4 @@
 
 -- blog page url: /blog
 -- responsive design
+-- info popup
