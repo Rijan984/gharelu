@@ -59,3 +59,9 @@
   background: #888;
   border-radius: 100px;
 }
+@media screen and (max-width: 1000px) {
+  .blogPopup {
+    width: 50%;
+    margin: 5vh 25%;
+  }
+}
