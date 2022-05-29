@@ -5,12 +5,15 @@ function Popup({ info, setShow }) {
   return (
     <div className="mainBlog-popup">
       <div className="blogPopup">
-        <img src="" alt="Property" />
+        <img
+          src="https://bdnmb.ca/wp-content/uploads/2020/06/pexels-photo-106399.jpeg"
+          alt="Property"
+        />
         <div className="info">
           <div className="top">
-            <span className="btn btnprimary"> Purpose</span>
-            <span className="btn btnprimary"> Purpose</span>
-            <span className="btn btnprimary"> Purpose</span>
+            <p className="btn btn-primary"> Purpose</p>
+            <p className="btn btn-primary"> Purpose</p>
+            <p className="btn btn-primary"> Purpose</p>
           </div>
           <div className="description">
             <p>{info.title}</p>
@@ -28,9 +31,14 @@ function Popup({ info, setShow }) {
             <p>Tota Area: </p>
             <p>Tota Area: </p>
           </div>
-          <button className="btn btn-primary" onClick={() => setShow(false)}>
-            Close
-          </button>
+          <div className="exit">
+            <button
+              className="btn btn-primary close"
+              onClick={() => setShow(false)}
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
