@@ -2,3 +2,7 @@
 
 -- login error fixed
 -- facebook / google login fixed
+
+5/29/2022
+
+-- blog page url:/blog
