@@ -6,5 +6,5 @@
 5/29/2022
 
 -- blog page url: /blog
--- responsive design
+-- responsive design of blog page
 -- property info popup
