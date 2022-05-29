@@ -1,5 +1,6 @@
 .blog {
   width: 70%;
+  margin: 0 2.5%;
   float: left;
   /* height: calc(100vh - 60px); */
   /* background-color: red; */
@@ -38,7 +39,7 @@
 }
 
 .popular {
-  width: 30%;
+  width: 25%;
   float: left;
 }
 .popular .popular-post {

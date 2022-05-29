@@ -51,11 +51,16 @@ function Blog() {
             <p>Category</p>
             <p>Title</p>
           </div>
+          <div className="info">
+            <img src="" alt="popular blog image" />
+            <p>Category</p>
+            <p>Title</p>
+          </div>
         </div>
         <div className="popular-post">
           <p>Popular Post</p>
           <div className="info">
-            <img src="" alt="popular blog image" />
+            {/* <img src="" alt="popular blog image" /> */}
             <p>Category</p>
             <p>Title</p>
           </div>
