@@ -9,3 +9,4 @@
 -- responsive design of blog page
 -- property info popup
 -- popup design
+-- transparrent background with onClick function
