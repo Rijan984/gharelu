@@ -1,0 +1,14 @@
+.blogPopup {
+  height: 70vh;
+  width: 70%;
+  margin: 15vh 15%;
+  background-color: white;
+}
+.mainBlog-popup {
+  height: 100vh;
+  width: 100%;
+  z-index: 200;
+  position: absolute;
+  position: fixed;
+  background-color: rgba(39, 39, 42, 0.75);
+}
