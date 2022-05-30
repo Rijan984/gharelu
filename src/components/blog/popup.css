@@ -1,7 +1,8 @@
 .blogPopup {
+  position: relative;
   height: 90vh;
-  width: 30%;
-  margin: 5vh 35%;
+  width: 40%;
+  margin: 5vh 30%;
   background-color: white;
   overflow-y: scroll;
   z-index: 200;
@@ -27,8 +28,52 @@
   float: left;
   border: 1px solid black;
 }
+.underline {
+  float: left;
+  width: 100%;
+  margin-bottom: 8px;
+  height: 1px;
+  background-color: rgb(205, 205, 205);
+}
+.description p {
+  /* color: rgb(130, 130, 130); */
+}
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+.blogPopup .emoji {
+  width: 100%;
+  float: left;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+.blogPopup .emoji i {
+  margin: 0 20px;
+  font-size: 30px;
+}
+.blogPopup .location {
+  width: 7%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  right: 20px;
+  z-index: 500;
+  top: 34%;
+  color: black;
+  background-color: rgb(207, 206, 206);
+  padding: 1%;
+  border-radius: 50%;
+}
+.location i {
+  font-size: 20px;
+}
 .btn-primary {
   background-color: #0079bf !important;
+  /* height: 40px; */
+  font-size: 13px;
 }
 .top p {
   margin: 10px 10px;
@@ -63,5 +108,19 @@
   .blogPopup {
     width: 50%;
     margin: 5vh 25%;
+  }
+  .blogPopup .location {
+    width: 10%;
+  }
+  .blogPopup .emoji {
+    width: 100%;
+    float: left;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+  }
+  .blogPopup .emoji i {
+    margin: 0 10px;
+    font-size: 25px;
   }
 }

@@ -10,3 +10,7 @@
 -- property info popup
 -- popup design
 -- transparrent background with onClick function
+
+5/30/2022
+
+-- blog details popup

@@ -11,6 +11,9 @@ function Popup({ info, setShow }) {
             src="https://bdnmb.ca/wp-content/uploads/2020/06/pexels-photo-106399.jpeg"
             alt="Property"
           />
+          <div className="location">
+            <i className="bi bi-geo-alt-fill"></i>
+          </div>
           <div className="info">
             <div className="top">
               <p className="btn btn-primary"> Purpose</p>
@@ -18,14 +21,27 @@ function Popup({ info, setShow }) {
               <p className="btn btn-primary"> Purpose</p>
             </div>
             <div className="description">
-              <p>{info.title}</p>
-              <span>{info.address}</span>
-              <span>State</span>
-              <span>District</span>
-              <p> Rating and comment</p>
-              <span>Price</span>
+              <div className="title">
+                <p>{info.title}</p>
+              </div>
+              <span>{info.address} </span>
+              {/* <span>State </span>
+              <span>District</span> */}
+              <p>
+                <i class="bi bi-star-fill"></i> Rating and comment
+              </p>
+              <span>Rs. {info.price} </span>
               <span className="btn btn-primary">Negotiable</span>
-              <div>emojis</div>
+              <div className="underline" style={{ margin: '10px 0' }}></div>
+              <div className="emoji">
+                <i class="bi bi-emoji-smile"></i>
+                <i class="bi bi-emoji-smile"></i>
+                <i class="bi bi-emoji-smile"></i>
+                <i class="bi bi-emoji-smile"></i>
+                <i class="bi bi-emoji-smile"></i>
+                <i class="bi bi-emoji-smile"></i>
+              </div>
+              <div className="underline" style={{ margin: '10px 0' }}></div>
               <p>description</p>
               <p>Tota Area: </p>
               <p>Tota Area: </p>
